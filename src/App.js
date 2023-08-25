@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Particle  from './components/bg-particle/particle';
+import Navbar from './components/navbar/navbar';
+import HeroSection from './components/hero-section/herosection';
+import Form from './components/Form/Form'
+
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HeroSection />} />
+        <Route path="/Form" element={<Form />} />
+      </Routes>
+    <Particle />
     </div>
   );
 }
